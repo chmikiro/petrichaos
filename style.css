@@ -1,12 +1,11 @@
-/*
 @font-face{
   font-family:"Local Mono";
-  src:url("fonts/TBD.woff2") format("woff2");
+  src:url("fonts/JetBrainsMono-regular.woff2") format("woff2");
   font-display:swap;
 }
-*/
+
 :root{
-  --font:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;
+  --font:ui-monospace,"Local Mono","SF Mono","Cascadia Mono",Menlo,Consolas,"DejaVu Sans Mono",monospace;
   --bg:#0a0a0b;--panel:#111114;--fg:#ececec;--mut:#8b8b92;--line:#25252a;
   --sc:#ff5500;--am:#ffa200;--max:1040px;
 }
