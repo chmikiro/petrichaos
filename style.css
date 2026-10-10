@@ -66,3 +66,9 @@ h1{font-size:clamp(3rem,13vw,8rem);line-height:.9;margin:.5rem 0 1.5rem;letter-s
 .about p{max-width:62ch;color:var(--mut);margin:0}
 .foot{border-top:1px solid var(--line);color:var(--mut);font-size:.8rem}
 .foot p{margin:.25rem 0}
+
+/* privacy page append */
+.doc h1{font-size:clamp(2rem,7vw,3.5rem);margin:0 0 .75rem}
+.doc ul{max-width:62ch;color:var(--mut);padding-left:1.25rem;margin:.5rem 0 1rem}
+.doc li{margin:.35rem 0}
+.doc a{text-underline-offset:3px}
