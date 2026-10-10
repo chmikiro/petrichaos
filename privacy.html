@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<title>petrichaos | privacy (you should care for?)</title>
+<meta name="description" content="what this site collects (nothing) and what the embedded players do.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">skip to content</a>
+
+<nav class="nav" aria-label="Primary">
+  <a class="brand" href="/">petrichaos</a>
+  <ul>
+    <li><a href="/#soundcloud">soundcloud</a></li>
+    <li><a href="/#audiomack">audiomack</a></li>
+    <li><a href="/#about">_about</a></li>
+    <li><a href="/#contact">_contact</a></li>
+  </ul>
+</nav>
+
+<main id="main" class="doc">
+
+  <section class="about" aria-labelledby="h-title">
+    <h1 id="h-title">privacy</h1>
+    <p>short version: this site collects nothing. the players are third-party. here is what their policies disclose and what i observed.</p>
+  </section>
+
+  <section class="about" aria-labelledby="h-site">
+    <h2 id="h-site">_this site</h2>
+    <ul>
+      <li>no analytics, no cookies, no forms, no remote fonts, no logs on my side.</li>
+      <li>static files only. source is public: <a href="https://github.com/chmikiro/petrichaos" rel="noopener noreferrer" target="_blank">github.com/chmikiro/petrichaos</a>.</li>
+      <li>hosting (this site is served live from source above): the host may keep standard request logs i can't control.</li>
+      <li>nothing from soundcloud or audiomack loads until you click "load player". 2 hosts strictly scoped as frames.</li>
+    </ul>
+  </section>
+
+  <section class="about" aria-labelledby="h-test">
+    <h2 id="h-test">_test setup</h2>
+    <ul>
+      <li>browser: ironfox v157.0.1, private browsing.</li>
+      <li>tools: firefox network log, canvasBlocker v1.12 log, localcdn log, 1hosts dns lists (on nextdns), ublock origin logs, ghostery logs.</li>
+      <li>tested 2026-10-10, one platform per run, player clicked manually.</li>
+      <li>my own observations, not an audit.</li>
+    </ul>
+  </section>
+
+  <section class="about" aria-labelledby="h-sc">
+    <h2 id="h-sc">_soundcloud</h2>
+    <p>what their <a href="https://soundcloud.com/pages/privacy" rel="noopener noreferrer" target="_blank">privacy policy</a> says (paraphrased):</p>
+    <ul>
+      <li>when you open a page with a soundcloud widget, they may receive personal data about you, including which site you were on.</li>
+      <li>the widget may recognize you to fetch your library and knows when you interact with it.</li>
+      <li>they log ip, access times, browser, os, device info and referring page, even without an account.</li>
+      <li>they use cookies, pixels and local storage, and may let partners do the same.</li>
+    </ul>
+    <p>what i observed:</p>
+    <ul>
+      <li>repeated screen and canvas reads logged by my fingerprint blocker. not needed for playback, but... it's common practice.</li>
+      <li>requests to api-widget.soundcloud.com/me. looks like a logged-in-user lookup. flagged as a tracker by most blocking lists & network filters.</li>
+      <li>requests to dwt.soundcloud.com/js. listed as a tracker in 1hosts lite, the low-false-positive tier (so also in xtra). not flagged by the other lists use. no idea what it does.</li>
+    </ul>
+    <p>direct link, no embed: <a href="https://soundcloud.com/petrichaos" rel="noopener noreferrer" target="_blank">soundcloud.com/petrichaos</a></p>
+  </section>
+
+  <section class="about" aria-labelledby="h-am">
+    <h2 id="h-am">_audiomack</h2>
+    <p>what their <a href="https://audiomack.com/about/privacy-policy" rel="noopener noreferrer" target="_blank">privacy policy</a> says (paraphrased, version effective 2020-12-23):</p>
+    <ul>
+      <li>visitors without an account may have ip, browser or device type, os and carrier collected.</li>
+      <li>usage data can include geolocation, cookie data, urls visited, the previous site and interactions with third-party widgets and ads.</li>
+      <li>ad providers may get browser name, language, genre and location. they say they don't sell personal data.</li>
+      <li>they share hashed email, ip and browser info with identity partners such as liveramp, which can return an identifier stored in a first-party cookie.</li>
+      <li>they use cookies, pixel tags, web beacons and web storage, and don't respond to do not track.</li>
+    </ul>
+    <p>what i observed:</p>
+    <ul>
+      <li>no fingerprinting activity detected by my tools.</li>
+      <li>mostly ad and analytics requests: edge.aditude.io (load.js), synchrobox.adswizz.com (register2.php), cdn.adswizz.com (synchroclient2.js), googletagmanager.com (gtag), securepubads.g.doubleclick.net (gpt.js).</li>
+      <li>all of the above was blocked</li>
+      <li>my tools don't see server-side cookies or data sharing between companies, so "no fingerprinting detected" is not a clean bill of health.</li>
+    </ul>
+    <p>direct link, no embed: <a href="https://audiomack.com/petrichaos" rel="noopener noreferrer" target="_blank">audiomack.com/petrichaos</a></p>
+  </section>
+
+  <section class="about" aria-labelledby="h-note">
+    <h2 id="h-note">_caveat</h2>
+    <p>both platforms can change their code or policies at any time. check with your own tools if it matters to you (it should).</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p><a href="/">back to music</a></p>
+  <p>&copy; petrichaos &middot; <a href="privacy">privacy</a></p>
+</footer>
+
+</body>
+</html>
